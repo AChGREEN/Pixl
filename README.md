@@ -1,3 +1,3 @@
 # Pixl
 
-Webpage for Mission 1
+index.html and main.css: Webpage for Mission 1
