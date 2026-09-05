@@ -1,0 +1,198 @@
+
+:root {
+  --ink: #0e1b26;        /* page background, deep blueprint navy */
+  --surface: #142534;    /* card / panel background */
+  --line: #2a4256;       /* grid lines, borders */
+  --text: #e8eef2;       /* primary text */
+  --muted: #8fa3b0;      /* secondary text */
+  --accent: #f2a93b;     /* single warm accent — used sparingly, on purpose */
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.18;
+}
+
+.sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 4rem;
+}
+
+
+.hero {
+  margin-bottom: 4.5rem;
+}
+
+.coords {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 3.75rem);
+  line-height: 1.05;
+  margin: 0 0 0.9rem;
+  color: var(--text);
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 34ch;
+  margin: 0;
+}
+
+
+.section {
+  margin-bottom: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0 0 1.5rem;
+  color: var(--text);
+}
+
+.project {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-body {
+  padding: 1.5rem;
+}
+
+.project-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.project-desc {
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+.project-link {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration-color: transparent;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  text-decoration-color: var(--accent);
+}
+
+.project + .project {
+  margin-top: 1.5rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-list a {
+  font-size: 1.05rem;
+}
+
+
+.footer {
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .sheet {
+    padding-top: 4rem;
+  }
+  .hero {
+    margin-bottom: 3rem;
+  }
+}
